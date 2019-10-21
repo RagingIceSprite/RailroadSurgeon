@@ -9,9 +9,6 @@ public class SpawnController : MonoBehaviour
     public static Quaternion rot;
 
     public GameObject track1;
-    public GameObject track2;
-
-    public static int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,17 +27,7 @@ public class SpawnController : MonoBehaviour
     {
         if(needToSpawn)
         {
-            if(index == 0)
-            {
-                Instantiate(track2, spawnPos, rot);
-                index++;
-            }
-            else
-            {
-                Instantiate(track1, spawnPos, rot);
-                index = 0;
-            }
-            
+            Instantiate(track1, spawnPos, rot);
             needToSpawn = false;
         }
     }
