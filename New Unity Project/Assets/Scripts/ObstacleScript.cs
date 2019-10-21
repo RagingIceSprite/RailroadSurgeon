@@ -22,6 +22,5 @@ public class ObstacleScript : MonoBehaviour
         {
             UIupdate.gameOver = true;
         }
-        FMODUnity.RuntimeManager.PlayOneShot("event:/train_sounds/train_crash");
     }
 }

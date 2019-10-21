@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   track1: {fileID: 1303296323492748824, guid: 21556534868ed904c9bb38e1bce4d43f, type: 3}
-  track2: {fileID: 0}
 --- !u!4 &134789049
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +853,6 @@ GameObject:
   - component: {fileID: 780444243}
   - component: {fileID: 780444245}
   - component: {fileID: 780444244}
-  - component: {fileID: 780444240}
   m_Layer: 8
   m_Name: Train
   m_TagString: Player
@@ -862,29 +860,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &780444240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780444239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/train_sounds/train_whistle
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!4 &780444243
 Transform:
   m_ObjectHideFlags: 0
@@ -3101,6 +3076,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3509406082747211846, guid: b6d85787e1a61394eaf1593c3b163996,
+        type: 3}
+      propertyPath: m_Name
+      value: stopper
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509406082747211846, guid: b6d85787e1a61394eaf1593c3b163996,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 497845559133524565, guid: b6d85787e1a61394eaf1593c3b163996,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3155,16 +3140,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -91.896
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509406082747211846, guid: b6d85787e1a61394eaf1593c3b163996,
-        type: 3}
-      propertyPath: m_Name
-      value: stopper
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509406082747211846, guid: b6d85787e1a61394eaf1593c3b163996,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d85787e1a61394eaf1593c3b163996, type: 3}
