@@ -6,32 +6,54 @@ public class TrackRotationScript : MonoBehaviour
 {
 
     public int trackDirection;
+    public int lastTrackDirection;
+    public GameObject leftTrack;
+    public GameObject rightTrack;
+    public GameObject straightTrack;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lastTrackDirection = trackDirection;
     }
+
+    void Awake()
+    {
+        lastTrackDirection = trackDirection;
+        //Debug.Log(lastTrackDirection);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        if (trackDirection == -1)
+        
+
+        if (lastTrackDirection != -1 && trackDirection == -1)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, -50, transform.rotation.eulerAngles.z);
+            //Debug.Log("lastTrack: " + lastTrackDirection);
+            //Debug.Log("track: " + trackDirection);
+            Instantiate(leftTrack, transform.position, transform.rotation, transform.parent);
+            //Debug.Log("heyyyyyyyyyyy");
+            Destroy(transform.gameObject);
+
         }
-        else if (trackDirection == 0)
+        else if (lastTrackDirection != 0 && trackDirection == 0)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+            Instantiate(straightTrack, transform.position, transform.rotation, transform.parent);
+            Destroy(gameObject);
         }
-        else
+        else if(lastTrackDirection != 1 && trackDirection == 1)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 50, transform.rotation.eulerAngles.z);
+            Instantiate(rightTrack, transform.position, transform.rotation, transform.parent);
+            Destroy(gameObject);
         }
+
+        lastTrackDirection = trackDirection;
     }
 }
