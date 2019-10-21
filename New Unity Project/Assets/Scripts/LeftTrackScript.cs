@@ -14,9 +14,9 @@ public class LeftTrackScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        trackOne = new Vector3(10, 0, 0);
+        trackOne = new Vector3(11, 0, 0);
         trackTwo = Vector3.zero;
-        trackThree = new Vector3(-10, 0, 0);
+        trackThree = new Vector3(-11, 0, 0);
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class LeftTrackScript : MonoBehaviour
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log(trackDirection);
+            //Debug.Log(trackDirection);
             if (this.gameObject.layer == LayerMask.NameToLayer("Track 1"))
             {
                 if(trackDirection == -1)

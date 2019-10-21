@@ -16,7 +16,7 @@ public class TrackColliderTrigger : MonoBehaviour
         {
             //Debug.Log("Yoooo");
 
-            if(index == 0)
+            /*if(index == 0)
             {
                 GameObject temp = Instantiate(myPrefab, newPos.position, Quaternion.Euler(newPos.rotation.eulerAngles.x, -newPos.rotation.eulerAngles.y, newPos.rotation.eulerAngles.z));
                 index++;
@@ -25,10 +25,12 @@ public class TrackColliderTrigger : MonoBehaviour
             {
                 GameObject temp = Instantiate(right, newPos.position, Quaternion.Euler(newPos.rotation.eulerAngles.x, -newPos.rotation.eulerAngles.y, newPos.rotation.eulerAngles.z));
                 index = 0;
-            }
-            
+            }*/
 
-
+            //Instantiate(myPrefab, newPos.position, Quaternion.Euler(newPos.rotation.eulerAngles.x, -newPos.rotation.eulerAngles.y, newPos.rotation.eulerAngles.z));
+            SpawnController.needToSpawn = true;
+            SpawnController.spawnPos = newPos.position;
+            SpawnController.rot = newPos.rotation;
 
             //temp.transform.position = GetComponentInChildren<Transform>().position;
 

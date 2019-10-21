@@ -56,15 +56,16 @@ public class TrackSwapScript : MonoBehaviour
             point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
             Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction*100, Color.red, 5f);
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
                 LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
                 script.trackDirection = currentTrackSelected;
-                GameObject trackModel = FindChildObjectWithTag(script.gameObject.transform, "Track");
+                GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
                 trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
                 //track rotation
+                
             }
-
+            //Debug.Log(hit.transform.gameObject);
             mouseDown = false;
         }
     }
@@ -102,7 +103,7 @@ public class TrackSwapScript : MonoBehaviour
             {
                 
                 Transform child = p.GetChild(i);
-                Debug.Log(child.name);
+                //Debug.Log(child.name);
                 if (child.tag.Equals(tag))
                 {
                     return child.gameObject;

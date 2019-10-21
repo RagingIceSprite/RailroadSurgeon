@@ -77,19 +77,19 @@ public class TrainMovement : MonoBehaviour
 
             if(oldX > nextTrack.x && nextTrack.x == 0f)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 10f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
             }
-            else if (oldX > nextTrack.x && nextTrack.x == -10f)
+            else if (oldX > nextTrack.x && nextTrack.x == -11f)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 10f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
             }
             else if (oldX < nextTrack.x && nextTrack.x == 0f)
             {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 10f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
             }
-            else if (oldX < nextTrack.x && nextTrack.x == 10f)
+            else if (oldX < nextTrack.x && nextTrack.x == 11f)
             {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 10f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
             }
             else
             {
